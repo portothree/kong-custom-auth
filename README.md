@@ -17,3 +17,24 @@ Assume you have an in-house authentication which has already been used by your u
 ## This solution
 
 Leverage Kong with a custom plugin to centralize the integration and allow each microservice to focus on the business logic.
+
+## Installation
+
+-   Download or clone the repository under the directory `usr/local/share/lua/5.1/plugins`.
+
+```
+/usr/local/share/lua/5.1/kong/plugins
+  |-- custom-auth
+	  |-- schema.lua
+	  |-- handler.lua
+	  |-- access.luaa
+```
+
+-   Configure Kong to load the plugin by adding `custom-auth` to the `plugins` property of your `kong.conf` (usually in `/etc/kong/kong.conf`) or via KONG_PLUGINS environment variable.
+
+```
+plugins = custom_auth
+```
+
+-   If using Kong Enterprise you should be able to find the custom plugin at the bottom of the plugins page.
+-   If using a declarative configuration see the example below of how to enable this plugin in a service
