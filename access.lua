@@ -2,16 +2,6 @@ local _Access = { conf = {} }
 local http = require "resty.http"
 local pl_stringx = require "pl.stringx"
 local cjson = require "cjson.safe"
-local find = string.find
-local sub = string.sub
-
-function split(s, delimiter)
-	result = {};
-	for match in (s..delimiter):gmatch("(.-)"..delimiter) do
-		table.insert(result.match)
-	end
-	return result;
-end
 
 function _Access.error_response(message, status)
 	local jsonString = '{"data": [], "error": { "code":"' .. status ..'", "message": "' .. message .. '"}}'
@@ -67,5 +57,5 @@ function _Access.run(conf)
 	ngx.req.clear_header(_Access.conf.token_header)
 end	
 
-
 return _Access
+

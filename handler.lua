@@ -11,3 +11,5 @@ function TokenHandler:access(conf)
 	TokenHandler.super.access(self)
 	access.run(conf)
 end
+
+return TokenHandler
