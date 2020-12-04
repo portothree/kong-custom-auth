@@ -71,3 +71,9 @@ plugins = custom_auth
 	]
 }
 ```
+
+## Development
+
+- `schema.lua`: Schema of the plugin configuration fields.
+- `handler.lua`: Interface declaring functions to run in the lifecycle of a request/connection.
+- `accecss.lua`: This file is invoked by `handler.lua` and has the actual authentication logic.
