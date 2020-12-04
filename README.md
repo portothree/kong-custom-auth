@@ -37,4 +37,37 @@ plugins = custom_auth
 ```
 
 -   If using Kong Enterprise you should be able to find the custom plugin at the bottom of the plugins page.
--   If using a declarative configuration see the example below of how to enable this plugin in a service
+-   If using a declarative configuration see the example below of how to enable this plugin in a service.
+
+```
+{
+	"_format_version": "2.1",
+	"_transform": true,
+	"services": [
+		{
+			"name": "example-service",
+			"url": "http://example.com",
+			"routes": [
+				{
+					"name": "example-route",
+					"paths": ["/"]
+				}
+			],
+			"plugins": [
+				{
+					"name": "custom-auth",
+					"config": {
+						"validation_endpoint": "http://example.com/auth/validate/token",
+						"token_header": "Authorization"
+					}
+				}
+			]
+		}
+	],
+	"consumers": [
+		{
+			"username": "example-user"
+		}
+	]
+}
+```
