@@ -1,7 +1,7 @@
 local typedefs = require "kong.db.schema.typedefs"
 
 return {
-	name = "kong-custom-auth",
+	name = "custom-auth",
 	fields = {
 		{ protocols = typedefs.protocols_http },
 		{ config = {
