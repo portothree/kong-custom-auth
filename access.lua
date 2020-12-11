@@ -36,7 +36,7 @@ end
 
 function _Access.run(conf)
 	_Access.conf = conf
-	local token = ngx.req.get_headers()[_Access.conf.token_header]
+	local token = ngx.req.get_headers()[_Access.conf.token_header] or ngx.var.cookie_token
 
 	if not token then
 		_Access.error_response("Unauthenticated", ngx.HTPP_UNAUTHORIZED)
