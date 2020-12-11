@@ -74,8 +74,8 @@ plugins = custom_auth
 
 ## Configuration
 
-`config.validatin_endpoint`: your auth endpoint that check if the token passed in the Authorization header (or the one defined in `token_header`) is valid.
-`config.token_header`: the name of the header where the token will be sent (defaults to `Authorization`). If the token is not found in the defined header, the plugin will look for a cookie named `token` and pass it as a `Authorization` header to your auth service.
+-   `config.validatin_endpoint`: your auth endpoint that check if the token passed in the Authorization header (or the one defined in `token_header`) is valid.
+-   `config.token_header`: the name of the header where the token will be sent (defaults to `Authorization`). If the token is not found in the defined header, the plugin will look for a cookie named `token` and pass it as a `Authorization` header to your auth service.
 
 ## Development
 
