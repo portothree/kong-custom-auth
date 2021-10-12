@@ -16,7 +16,7 @@ function _Access.validate_token(token)
 
     local res, err = httpc:request_uri(_Access.conf.validation_endpoint, {
 	method = "POST",
-	ssl_verify = false,
+	ssl_verify = _Access.conf.ssl_verify,
 	headers = {
 	    ["Content-Type"] = "application/json",
 	    ["Authorization"] = token

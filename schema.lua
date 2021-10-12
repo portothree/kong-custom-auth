@@ -8,7 +8,8 @@ return {
 	    type = "record",
 	    fields = {
 		{ validation_endpoint = typedefs.url({ required = true }) },
-		{ token_header	= { type = "string", default = "Authorization", required = true } }
+		{ ssl_verify	= { type = "boolean", default = true, required = false } },
+		{ token_header	= { type = "string", default = "Authorization", required = true } },
 	    }
 	}
     }
